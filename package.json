@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/js-test-hw11/",
+    "build": "vite build --base=/testing-js-hw-11.2/",
     "preview": "vite preview"
   },
   "devDependencies": {
