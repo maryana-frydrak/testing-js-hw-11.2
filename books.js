@@ -1,0 +1,2 @@
+import"./assets/modulepreload-polyfill-BnkOoLKg.js";document.querySelector(`.js-create-form`),document.querySelector(`.js-update-form`),document.querySelector(`.js-reset-form`),document.querySelector(`.js-article-list`);
+//# sourceMappingURL=books.js.map

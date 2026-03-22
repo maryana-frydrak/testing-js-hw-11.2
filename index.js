@@ -1,0 +1,2 @@
+import"./assets/modulepreload-polyfill-BnkOoLKg.js";import{t as e}from"./assets/vendor-ByiddPBc.js";e.create({baseURL:`https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com`,headers:{token:`HELLO WORLD`},params:{perPage:20}});
+//# sourceMappingURL=index.js.map

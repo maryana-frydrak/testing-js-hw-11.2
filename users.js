@@ -1,0 +1,13 @@
+import"./assets/modulepreload-polyfill-BnkOoLKg.js";import{t as e}from"./assets/vendor-ByiddPBc.js";e.defaults.baseURL=``,e.defaults.headers={},e.defaults.params={};var t=e.create({baseURL:`https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com`}),n=async()=>t.get(`/public/students`).then(e=>e.data),r=async e=>t.post(`/public/students`,e).then(e=>e.data),i=async(e,n)=>t.patch(`/public/students/${e}`,n).then(e=>e.data),a=async e=>t.delete(`/public/students/${e}`).then(e=>e.data);async function o(t){let n={key:`29372998-77c4088f99339c8fc310ed4d5`,q:t};return e.get(`https://pixabay.com/api/`,{params:n}).then(e=>e.data)}o(`Tesla`);var s={userListElem:document.querySelector(`.js-user-list`),createUserForm:document.querySelector(`.js-create-form`),updateUserForm:document.querySelector(`.js-update-form`),resetUserForm:document.querySelector(`.js-reset-form`)};document.addEventListener(`click`,e=>{console.log(e.target.nodeName)}),s.userListElem.addEventListener(`click`,e=>{if(e.target.nodeName!==`BUTTON`)return;let t=e.target.closest(`li`),n=t.dataset.id;a(n).then(()=>{t.remove()}).catch(e=>{console.log(`awdawd`)})}),s.updateUserForm.addEventListener(`submit`,e=>{e.preventDefault();let t=new FormData(e.target),n=t.get(`userId`);i(n,{firstName:t.get(`firstName`)||void 0,lastName:t.get(`lastName`)||void 0,major:t.get(`major`)||void 0,cohortYear:t.get(`cohortYear`)||void 0}).then(t=>{let r=document.querySelector(`li[data-id="${n}"]`);r.outerHTML=c(t.item),e.target.reset()}).catch(()=>{})}),s.createUserForm.addEventListener(`submit`,e=>{e.preventDefault();let t=new FormData(e.target);r({firstName:t.get(`firstName`),lastName:t.get(`lastName`),major:t.get(`major`),cohortYear:t.get(`cohortYear`)}).then(e=>{let t=e.item,n=c(t);s.userListElem.insertAdjacentHTML(`afterbegin`,n)}).catch(()=>{}),e.target.reset()}),document.addEventListener(`DOMContentLoaded`,()=>{n().then(e=>{let t=e.items,n=l(t);s.userListElem.innerHTML=n}).catch(()=>{})});function c(e){return`<li class="card user-item" data-id="${e._id}">
+        <img
+          src="https://picsum.photos/200?random=${e._id}"
+          alt="#"
+          class="user-avatar"
+        />
+        <h3 class="user-title">${e.firstName} ${e.lastName}</h3>
+        <p>major: ${e.major}</p>
+        <p>cohortYear: ${e.cohortYear}</p>
+        <p>${e._id}</p>
+        <button class="btn button">DELETE</button>
+      </li>`}function l(e){return e.map(c).join(``)}
+//# sourceMappingURL=users.js.map
